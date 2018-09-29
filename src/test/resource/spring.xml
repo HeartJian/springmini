@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+    <bean name="hello" class="ioc.Hello">
+        <property name="world" value="Hello World!"></property>
+    </bean>
+
+    <bean name="world" class="ioc.Hello">
+        <property name="world" value="spax"></property>
+        <property name="hello" ref="hello"></property>
+    </bean>
+</beans>
