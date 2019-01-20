@@ -5,7 +5,7 @@
     </bean>
 
     <bean name="world" class="ioc.Hello">
-        <property name="world" value="spax"></property>
+        <property name="world" value="你好啊"></property>
         <property name="hello" ref="hello"></property>
     </bean>
 </beans>

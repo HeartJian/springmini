@@ -8,12 +8,16 @@ import core.ioc.beans.xml.XmlBeanDefinitionReader;
 public class ClassPathXmlApplicationContext extends AbstractApplicationContext{
     private String configLocation;
 
-    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) throws Exception {
+    public ClassPathXmlApplicationContext(AbstractBeanFactory beanFactory, String configLocation) {
         super(beanFactory);
         this.configLocation = configLocation;
-        refresh();
+        try {
+            refresh();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    public ClassPathXmlApplicationContext(String configLocation) throws Exception {
+    public ClassPathXmlApplicationContext(String configLocation) {
         this(new AutowireCapableBeanFactory(),configLocation);
     }
 
